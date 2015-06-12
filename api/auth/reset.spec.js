@@ -72,5 +72,9 @@ describe('api.auth.reset', function() {
                     })
             });
         });
+        
+        it('sends an email with the password reset token');
+        it('only allows sending email with an url that is in config.mail.resetLinkAllowedDomains');
+        it('only allows sending email with an url that adheres to config.mail.resetLinkAllowNonSecure');
     });
 });
