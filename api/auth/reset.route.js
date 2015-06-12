@@ -34,7 +34,7 @@ router
                 if (err) return next(err);
     
                 if (!user) {
-                    return res.status(201).end(); // dont indicate non-existence of a user
+                    return res.status(400).end();
                 }
     
                 mail.sendPasswordReset(user, resetUrl, function(err, info){
