@@ -50,7 +50,7 @@ router
         }
     )
 
-    .post('/reset/mail/:token',
+    .post('/reset/:token',
 
         validate({
             body: {
@@ -63,6 +63,23 @@ router
     
         function(req, res, next){
             
+            jwt.verifyResetToken(req.params.token, function(err, data){
+
+                if (err) return res.status(400).send({name: 'InvalidTokenError', message: 'Reset password token is not valid'});
+
+                User.findOne({_id: data.sub}, function(err, user){
+                    
+                    if (err) return next(err);
+
+                    if (!user) return next(new errors.ResourceNotFoundError('User', data.sub));
+                    
+                    user.identities.local.secret = req.body.password;
+                    user.save(function(err){
+                        if (err) return next(err);
+                        res.status(204).end();
+                    })
+                });
+            });
         }
     );
 
