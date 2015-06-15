@@ -2,7 +2,12 @@ var router = require('express').Router(),
     User = require('../../lib/models/user/user.model'),
     Joi = require('joi'),
     jwt = require('../../lib/jwt'),
-    validate = require('express-validation');
+    validate = require('express-validation'),
+    url = require('url'),
+    config = require('../../config'),
+    _ = require('lodash'),
+    mail = require('../../lib/mail'),
+    errors = require('../../lib/errors');
 
 router
     
@@ -42,6 +47,22 @@ router
                     return res.status(201).end(); // dont indicate non-existence of a user
                 });
             });
+        }
+    )
+
+    .post('/reset/mail/:token',
+
+        validate({
+            body: {
+                password: Joi.string().required()
+            },
+            params: {
+                token: Joi.string().required()
+            }
+        }),
+    
+        function(req, res, next){
+            
         }
     );
 

@@ -243,7 +243,7 @@ https://url.as.specied/with/paths?andOriginalparam=OK&reset=<reset token>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 201 Ok                       Mail was sent correctly
 400 Bad Request              Email is not in use
-403 Forbidden                Url is not acceptable
+403 Forbidden                Url is not acceptable (see body for more info)
 422 Unprocessable Entity     Wrong parameters (see body for error info)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
