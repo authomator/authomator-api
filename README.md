@@ -241,9 +241,42 @@ https://url.as.specied/with/paths?andOriginalparam=OK&reset=<reset token>
 ### Response Codes
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-201 Ok                       Mail was sent correctly
+204 No Content               Mail was sent correctly
 400 Bad Request              Email is not in use
 403 Forbidden                Url is not acceptable (see body for more info)
+422 Unprocessable Entity     Wrong parameters (see body for error info)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+### Response Data
+
+None
+
+ 
+
+ 
+
+Change user password (POST /api/auth/reset/:resetToken)
+-------------------------------------------------------
+
+### Parameters (json body)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{
+    "password":              The new password to set for the user
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+### Response Codes
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+204 No Content               Password was reset correctly
+400 Bad Request              Invalid reset token
+404 Resource Not Found       User does not exist
 422 Unprocessable Entity     Wrong parameters (see body for error info)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
