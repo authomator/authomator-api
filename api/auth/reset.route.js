@@ -44,7 +44,7 @@ router
     
                 mail.sendPasswordReset(user, resetUrl, function(err, info){
                     if (err) next(err);
-                    return res.status(201).end(); // dont indicate non-existence of a user
+                    return res.status(204).end(); // dont indicate non-existence of a user
                 });
             });
         }

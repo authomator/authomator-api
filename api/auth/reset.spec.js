@@ -98,7 +98,7 @@ describe('api.auth.reset', function() {
                         email: user.identities.local.email,
                         url: 'https://127.0.0.1'
                     })
-                    .expect(201)
+                    .expect(204)
                     .end(function (err, res) {
                         expect(err).to.not.exist;
                         expect(mailStub).to.have.been.calledOnce;
