@@ -1,6 +1,8 @@
 Authomator-api
 ==============
 
+[![Build Status](https://travis-ci.org/authomator/authomator-api.svg?branch=master)](https://travis-ci.org/authomator/authomator-api)
+
 This is a nodejs/express/mongo based authentication server. The goal is to take
 care of authentication/registration/password resets using a REST API.
 
