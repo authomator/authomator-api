@@ -8,4 +8,4 @@ ADD . /site/
 
 ENV NODE_ENV=production
 ENTRYPOINT ["npm", "start"]
-EXPOSE 9000
+EXPOSE 3000
