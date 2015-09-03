@@ -7,6 +7,7 @@ var router = require('express').Router(),
     config = require('../../config'),
     _ = require('lodash'),
     mail = require('../../lib/mail'),
+    logger = require('../../lib/logger'),
     errors = require('../../lib/errors');
 
 router
